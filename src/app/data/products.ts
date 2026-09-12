@@ -1,9 +1,8 @@
 import { IProduct } from "../interfaces/product";
-import { v4 as uuidv4 } from 'uuid';
 
 export const products: IProduct[] = [
   {
-    id: uuidv4(),
+    id: crypto.randomUUID(),
     deleted: false,
     type: "Cocina",
     brand: "Whirlpool",
@@ -20,7 +19,7 @@ export const products: IProduct[] = [
     ],
   },
   {
-    id: uuidv4(),
+    id: crypto.randomUUID(),
     deleted: false,
     type: "Heladera",
     brand: "Samsung",
@@ -37,7 +36,7 @@ export const products: IProduct[] = [
     ],
   },
   {
-    id: uuidv4(),
+    id: crypto.randomUUID(),
     deleted: false,
     type: "Lavarropas",
     brand: "Drean",
@@ -54,7 +53,7 @@ export const products: IProduct[] = [
     ],
   },
   {
-    id: uuidv4(),
+    id: crypto.randomUUID(),
     deleted: false,
     type: "Horno microondas",
     brand: "BGH",
@@ -71,7 +70,7 @@ export const products: IProduct[] = [
     ],
   },
   {
-    id: uuidv4(),
+    id: crypto.randomUUID(),
     deleted: false,
     type: "Televisor",
     brand: "LG",
@@ -88,7 +87,7 @@ export const products: IProduct[] = [
     ],
   },
   {
-    id: uuidv4(),
+    id: crypto.randomUUID(),
     deleted: false,
     type: "Aire acondicionado",
     brand: "Surrey",
