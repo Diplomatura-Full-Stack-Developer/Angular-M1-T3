@@ -10,7 +10,7 @@ export class Products {
   }
 
   getProduct(id: string): IProduct {
-    const product = products.find(product => product.model === id);
+    const product = products.find(product => product.id === id);
     if (!product) {
       throw new Error('Product not found');
     }
@@ -22,7 +22,7 @@ export class Products {
   }
 
   updateProduct(product: IProduct): void {
-    const index = products.findIndex(p => p.model === product.model);
+    const index = products.findIndex(p => p.id === product.id);
     if (index === -1) {
       throw new Error('Product not found');
     }
@@ -30,7 +30,7 @@ export class Products {
   }
 
   deleteProduct(id: string): void {
-    const index = products.findIndex(p => p.model === id);
+    const index = products.findIndex(p => p.id === id);
     if (index === -1) {
       throw new Error('Product not found');
     }

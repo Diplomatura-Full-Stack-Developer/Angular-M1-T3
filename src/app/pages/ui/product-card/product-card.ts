@@ -14,21 +14,12 @@ import { Products } from '../../../services/product';
 })
 export class ProductCard {
   private productService = inject(Products);
-  @Input() product: IProduct = {
-    id: '',
-    deleted: false,
-    model: '',
-    type: '',
-    brand: '',
-    price: 0,
-    stock: 0,
-    offer: false,
-    imageUrl: '',
-    features: [],
-  } as IProduct;
+
+
+  @Input() product: IProduct | undefined;
 
   deleteProduct(id: string) {
     console.log(id);
-    // this.productService.deleteProduct(id);
+    this.productService.deleteProduct(id);
   }
 }
