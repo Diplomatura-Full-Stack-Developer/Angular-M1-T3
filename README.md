@@ -4,49 +4,25 @@
 
 ### Módulo 1: Angular
 
-### Unidad 2: Angular básico. Directivas y Formularios.
+### Unidad 3: Angular intermedio. Servicios.
 
-### Consigna: Formulario interactivo.
+### Tarea 3: Gestión y visualización de datos con _pipes_.
 
-Utiliza directivas estándar, directivas de atributos y el sistema de formularios reactivos en Angular,
-aplicando validaciones y estilos dinámicos.
+### Objetivos:
+
+Aplicar el concepto de **servicio** en Angular para manejar datos desde una API (simulada o real).
+Utilizar **pipes** estándar y personalizados para transformar información antes de presentarla.
 
 ### Consideraciones:
 
-- Se utiliza un componente de dialogo de Angular Material para mostrar el mensaje de éxito del formulario enviado
-  y los datos cargados en el formulario. Angular Material permite personalizar el contenido de sus componentes.
-
-- No se utilizan ***ngIf** y ***ngFor** porque la documentación de Angular los marca como obsoletos. En su lugar angular
-  recomienda utilizar el **@if** y el **@for**.
-
-- En el caso de esta tarea en lugar de utilizar el **@for** para renderizar los mensajes de validaciones, se utiliza un
-  esquema de validación externo al formulario, manteniendo un código del formulario más limpio y separando las responsabilidades.
-  El esquema enviará el mensaje de error correspondiente según como se esté complentando el formulario.
-
 ### Capturas de pantallas:
-
-- Se pueden observar la siguientes pantallas:
-
-  - Formulario vacío de inicio de la aplicación.
-  - Mensajes de error en el formulario de acuerdo a las validaciones establecidas. Botón de enviar deshabilitado.
-  - Formulario completado correctamente. Cambio de color del título y habilitación del botón de enviar.
-  - Formulario enviado con éxito y dialogo mostrando los datos cargados en el formulario.
-
-<table>
-<tr>
-<td><img src="./src/assets/empty-form.png" alt="Formulario vacío"></td>
-<td><img src="./src/assets/error-msg-form.png" alt="Mensajes de error en el formulario"></td>
-<td><img src="./src/assets/completed-form-ok.png" alt="Formulario completado correctamente"></td>
-<td><img src="./src/assets/saccesfull-send.png" alt="Formulario enviado con éxito"></td>
-</tr>
-</table>
 
 ### Como ejecutar la tarea:
 
 1. Clonar el repositorio:
 
 ```bash
-git clone https://github.com/Diplomatura-Full-Stack-Developer/Angular-M1-T2
+git clone https://github.com/Diplomatura-Full-Stack-Developer/Angular-M1-T3
 
 ```
 
