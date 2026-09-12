@@ -1,5 +1,5 @@
 export interface IProduct {
-  id: number;
+  id: string;
   deleted: boolean;
   type: string;
   brand: string;

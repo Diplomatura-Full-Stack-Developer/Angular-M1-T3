@@ -15,7 +15,7 @@ import { Products } from '../../../services/product';
 export class ProductCard {
   private productService = inject(Products);
   @Input() product: IProduct = {
-    id: 0,
+    id: '',
     deleted: false,
     model: '',
     type: '',
@@ -27,7 +27,8 @@ export class ProductCard {
     features: [],
   } as IProduct;
 
-  deleteProduct(model: string) {
-    this.productService.deleteProduct(model);
+  deleteProduct(id: string) {
+    console.log(id);
+    // this.productService.deleteProduct(id);
   }
 }
