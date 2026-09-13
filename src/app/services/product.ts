@@ -24,4 +24,8 @@ export class Products {
       ),
     );
   }
+
+  addProduct(product: IProduct): void {
+    this.products.update((list) => [...list, product]);
+  }
 }
