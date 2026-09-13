@@ -1,3 +1,12 @@
+<div class="flex justify-center">
+  <button
+    routerLink="/add-product"
+    class="bg-primary-500 text-white px-4 py-2 rounded-md cursor-pointer m-4"
+  >
+    Agregar producto
+  </button>
+</div>
+
 <div class="grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-4 p-4">
   @for (product of products(); track product.id) {
     <app-product-card [product]="product"></app-product-card>

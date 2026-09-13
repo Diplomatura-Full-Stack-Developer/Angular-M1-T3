@@ -4,9 +4,10 @@ import { ProductCard } from '../ui/product-card/product-card';
 import { computed } from '@angular/core';
 import { IProduct } from '../../interfaces/product';
 import { OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-products-list',
-  imports: [ProductCard],
+  imports: [ProductCard, RouterLink],
   templateUrl: './products-list.html',
 })
 export class ProductsList implements OnInit {
