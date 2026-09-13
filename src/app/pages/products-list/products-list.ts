@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { Products } from '../../services/product';
-import { IProduct } from '../../interfaces/product';
 import { ProductCard } from '../ui/product-card/product-card';
+import { IProduct } from '../../interfaces/product';
+import { signal } from '@angular/core';
 @Component({
   selector: 'app-products-list',
   imports: [ProductCard],
@@ -10,10 +11,12 @@ import { ProductCard } from '../ui/product-card/product-card';
 export class ProductsList {
 
   private productService = inject(Products);
-  products: IProduct[] = [];
+  products = signal<IProduct[]>([]);
 
   ngOnInit(): void {
-    this.products = this.productService.getProducts();
+    this.productService.getProducts().subscribe((products: IProduct[]) => {
+      this.products.set(products);
+    });
   }
-
 }
+

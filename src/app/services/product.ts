@@ -1,40 +1,16 @@
-import { Service } from '@angular/core';
-import { products } from '../data/products';
+import { inject, Service } from '@angular/core';
 import { IProduct } from '../interfaces/product';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Service()
 export class Products {
 
-  getProducts(): IProduct[] {
-    return products;
-  }
+  private http = inject(HttpClient);
 
-  getProduct(id: string): IProduct {
-    const product = products.find(product => product.id === id);
-    if (!product) {
-      throw new Error('Product not found');
-    }
-    return product;
-  }
 
-  createProduct(product: IProduct): void {
-    products.push(product);
-  }
-
-  updateProduct(product: IProduct): void {
-    const index = products.findIndex(p => p.id === product.id);
-    if (index === -1) {
-      throw new Error('Product not found');
-    }
-    products[index] = product;
-  }
-
-  deleteProduct(id: string): void {
-    const index = products.findIndex(p => p.id === id);
-    if (index === -1) {
-      throw new Error('Product not found');
-    }
-    products[index].deleted = true;
+  getProducts(): Observable<IProduct[]> {
+    return this.http.get<IProduct[]>('data/products.json');
   }
 
 }
