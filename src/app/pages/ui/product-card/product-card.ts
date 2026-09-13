@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { IProduct } from '../../../interfaces/product';
 import { CurrencyPipe } from '@angular/common';
-import { Products } from '../../../services/product';
+import { Products } from '../../../services/product.service';
 
 @Component({
   selector: 'app-product-card',
@@ -17,7 +17,7 @@ export class ProductCard {
   @Input() product: IProduct = {} as IProduct;
 
 
-  deleteProduct(id: string): void {
+  deleteProductById(id: string): void {
     this.productService.deleteProduct(id)
   }
 

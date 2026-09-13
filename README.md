@@ -15,6 +15,9 @@ Utilizar **pipes** estándar y personalizados para transformar información ante
 
 ### Consideraciones:
 
+- Se podrían guardar los datos en el localStorage para simular persistencia de datos.
+  Pero no es el objetivo de la tarea. No es parte de la consigna.
+
 ### Capturas de pantallas:
 
 ### Como ejecutar la tarea:

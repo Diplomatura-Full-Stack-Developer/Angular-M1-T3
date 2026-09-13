@@ -1,7 +1,6 @@
 import { inject, Service, signal } from '@angular/core';
 import { IProduct } from '../interfaces/product';
 import { HttpClient } from '@angular/common/http';
-
 @Service()
 export class Products {
 
@@ -12,8 +11,8 @@ export class Products {
   products = signal<IProduct[]>([]);
 
   loadProducts(): void {
-    this.http.get<IProduct[]>(this.apiUrl).subscribe((products) => {
-      this.products.set(products);
+    this.http.get<IProduct[]>(this.apiUrl).subscribe((prod) => {
+      this.products.set(prod.map((product) => ({ ...product, id: crypto.randomUUID() })));
     });
   }
 
@@ -26,6 +25,6 @@ export class Products {
   }
 
   addProduct(product: IProduct): void {
-    this.products.update((list) => [...list, product]);
+    this.products.update((list) => [...list, { ...product, id: crypto.randomUUID() }]);
   }
 }

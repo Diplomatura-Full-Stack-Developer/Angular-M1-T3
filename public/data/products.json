@@ -1,6 +1,5 @@
 [
   {
-    "id": "1",
     "deleted": false,
     "type": "Cocina",
     "brand": "Whirlpool",
@@ -17,7 +16,6 @@
     ]
   },
   {
-    "id": "2",
     "deleted": false,
     "type": "Heladera",
     "brand": "Samsung",
@@ -34,7 +32,6 @@
     ]
   },
   {
-    "id": "3",
     "deleted": false,
     "type": "Lavarropas",
     "brand": "Drean",
@@ -51,7 +48,6 @@
     ]
   },
   {
-    "id": "4",
     "deleted": false,
     "type": "Horno microondas",
     "brand": "BGH",
@@ -68,7 +64,6 @@
     ]
   },
   {
-    "id": "5",
     "deleted": false,
     "type": "Televisor",
     "brand": "LG",
@@ -85,7 +80,6 @@
     ]
   },
   {
-    "id": "6",
     "deleted": false,
     "type": "Aire acondicionado",
     "brand": "Surrey",
