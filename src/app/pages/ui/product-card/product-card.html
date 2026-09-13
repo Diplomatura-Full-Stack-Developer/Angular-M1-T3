@@ -18,6 +18,8 @@
     <p>{{ product.features.join(', ') }}</p>
   </mat-card-content>
   <mat-card-actions>
-    <button matButton class="bg-accent-600 text-white">Eliminar</button>
+    <button matButton class="bg-accent-600 text-white" (click)="deleteProduct(product.id)">
+      Eliminar
+    </button>
   </mat-card-actions>
 </mat-card>

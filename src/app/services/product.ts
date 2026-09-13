@@ -1,16 +1,27 @@
-import { inject, Service } from '@angular/core';
+import { inject, Service, signal } from '@angular/core';
 import { IProduct } from '../interfaces/product';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 @Service()
 export class Products {
 
+  private apiUrl = 'data/products.json';
+
   private http = inject(HttpClient);
 
+  products = signal<IProduct[]>([]);
 
-  getProducts(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>('data/products.json');
+  loadProducts(): void {
+    this.http.get<IProduct[]>(this.apiUrl).subscribe((products) => {
+      this.products.set(products);
+    });
   }
 
+  deleteProduct(id: string): void {
+    this.products.update((list) =>
+      list.map((product) =>
+        product.id === id ? { ...product, deleted: true } : product,
+      ),
+    );
+  }
 }

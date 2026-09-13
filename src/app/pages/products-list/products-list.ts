@@ -1,22 +1,24 @@
 import { Component, inject } from '@angular/core';
 import { Products } from '../../services/product';
 import { ProductCard } from '../ui/product-card/product-card';
+import { computed } from '@angular/core';
 import { IProduct } from '../../interfaces/product';
-import { signal } from '@angular/core';
+import { OnInit } from '@angular/core';
 @Component({
   selector: 'app-products-list',
   imports: [ProductCard],
   templateUrl: './products-list.html',
 })
-export class ProductsList {
+export class ProductsList implements OnInit {
 
   private productService = inject(Products);
-  products = signal<IProduct[]>([]);
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe((products: IProduct[]) => {
-      this.products.set(products);
-    });
+    this.productService.loadProducts();
   }
+
+  products = computed(() =>
+    this.productService.products()?.filter((product: IProduct) => !product.deleted),
+  );
 }
 
