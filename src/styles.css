@@ -27,18 +27,22 @@
     }
   }
   h2,
-  label {
+  form label {
     @apply text-sm font-bold text-primary-700 text-shadow-sm;
     @media (min-width: 768px) {
-      @apply text-lg text-shadow-lg;
+      @apply text-base text-shadow-lg;
     }
   }
 
-  input {
+  form input {
     @apply border border-gray-300 rounded-md p-2 text-sm;
     @media (min-width: 768px) {
-      @apply text-lg;
+      @apply text-base;
     }
+  }
+
+  form p {
+    @apply text-accent-700 text-sm;
   }
 }
 

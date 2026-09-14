@@ -1,0 +1,61 @@
+import { Validators } from '@angular/forms';
+import type { AbstractControl } from '@angular/forms';
+
+export const PRODUCT_FORM_SCHEMA = {
+  type: {
+    validators: [Validators.required, Validators.minLength(3)],
+    messages: {
+      required: 'El tipo de producto es obligatorio.',
+      minlength: 'El tipo de producto debe tener al menos 3 caracteres.',
+    },
+  },
+  brand: {
+    validators: [Validators.required, Validators.minLength(3)],
+    messages: {
+      required: 'La marca es obligatorio.',
+      minlength: 'La marca debe tener al menos 3 caracteres.',
+    },
+  },
+  model: {
+    validators: [Validators.required, Validators.minLength(3)],
+    messages: {
+      required: 'El modelo es obligatorio.',
+      minlength: 'El modelo debe tener al menos 3 caracteres.',
+    },
+  },
+  price: {
+    validators: [Validators.required, Validators.min(0)],
+    messages: {
+      required: 'El precio es obligatorio.',
+      min: 'El precio debe ser mayor a 0.',
+    },
+  },
+  stock: {
+    validators: [Validators.required, Validators.min(0)],
+    messages: {
+      required: 'El stock es obligatorio.',
+      min: 'El stock debe ser mayor a 0.',
+    },
+  },
+  features: {
+    validators: [Validators.required],
+    messages: {
+      required: 'Las características son obligatorias.',
+    },
+  },
+} as const;
+
+export type ProductField = keyof typeof PRODUCT_FORM_SCHEMA;
+
+export function fieldErrorMessage(
+  field: ProductField,
+  control: AbstractControl | null,
+): string | null {
+  if (!control?.touched || !control.errors) {
+    return null;
+  }
+
+  const errorKey = Object.keys(control.errors)[0];
+  const messages: Record<string, string> = PRODUCT_FORM_SCHEMA[field].messages;
+  return messages[errorKey] ?? null;
+}

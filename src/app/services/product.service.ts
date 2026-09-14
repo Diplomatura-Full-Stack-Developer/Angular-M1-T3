@@ -1,5 +1,5 @@
 import { inject, Service, signal } from '@angular/core';
-import { IProduct } from '../interfaces/product';
+import { IProduct } from '../interfaces/product.interface';
 import { HttpClient } from '@angular/common/http';
 @Service()
 export class Products {

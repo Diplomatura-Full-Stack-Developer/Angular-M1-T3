@@ -2,7 +2,7 @@ import { Component, inject, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { IProduct } from '../../../interfaces/product';
+import { IProduct } from '../../../interfaces/product.interface';
 import { CurrencyPipe } from '@angular/common';
 import { Products } from '../../../services/product.service';
 

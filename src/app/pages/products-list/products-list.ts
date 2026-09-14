@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Products } from '../../services/product.service';
 import { ProductCard } from '../ui/product-card/product-card';
 import { computed } from '@angular/core';
-import { IProduct } from '../../interfaces/product';
+import { IProduct } from '../../interfaces/product.interface';
 import { OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 @Component({
