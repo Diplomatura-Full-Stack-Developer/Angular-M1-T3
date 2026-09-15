@@ -5,7 +5,8 @@ import { inject } from '@angular/core';
 import { PRODUCT_FORM_SCHEMA, ProductField, fieldErrorMessage } from '../../validators/product-form.validator';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
-import { NgClass, NgStyle } from '@angular/common';
+import { NgClass } from '@angular/common';
+
 
 @Component({
   selector: 'app-add-product-form',
