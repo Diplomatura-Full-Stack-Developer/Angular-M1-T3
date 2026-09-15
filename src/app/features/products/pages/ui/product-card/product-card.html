@@ -1,5 +1,5 @@
 <mat-card
-  class="example-card justify-center items-center h-full bg-primary-100/80! shadow-lg!"
+  class="example-card justify-between items-center h-full bg-primary-100/80! shadow-lg!"
   appearance="outlined"
 >
   <mat-card-header class="text-center my-2">
@@ -10,7 +10,12 @@
       product.brand
     }}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-lg-image [src]="product?.imageUrl" alt="Photo of a Shiba Inu" />
+  <img
+    mat-card-lg-image
+    [src]="product.imageUrl"
+    alt="Photo of a Shiba Inu"
+    class="w-full h-full object-contain"
+  />
   <mat-card-content class="text-sm text-gray-700 text-shadow-sm my-2">
     <p>Precio: {{ product.price | currency: '$ ' }}</p>
 
