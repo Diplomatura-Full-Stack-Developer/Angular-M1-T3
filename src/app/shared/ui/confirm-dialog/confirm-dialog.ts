@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
-
+import { DatePipe } from '@angular/common';
 export interface ConfirmDialogData {
   title: string;
   name?: string;
@@ -10,7 +10,7 @@ export interface ConfirmDialogData {
 
 @Component({
   selector: 'app-confirm-dialog',
-  imports: [MatDialogModule],
+  imports: [MatDialogModule, DatePipe],
   templateUrl: './confirm-dialog.html',
 })
 export class ConfirmDialog {

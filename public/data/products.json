@@ -1,7 +1,7 @@
 [
   {
     "deleted": false,
-    "type": "Cocina",
+    "category": "Cocina",
     "brand": "Whirlpool",
     "model": "WFX57S",
     "price": 459999,
@@ -17,7 +17,7 @@
   },
   {
     "deleted": false,
-    "type": "Heladera",
+    "category": "Heladera",
     "brand": "Samsung",
     "model": "RT38K5932S8",
     "price": 899999,
@@ -33,7 +33,7 @@
   },
   {
     "deleted": false,
-    "type": "Lavarropas",
+    "category": "Lavarropas",
     "brand": "Drean",
     "model": "Next 8.12 Eco",
     "price": 549999,
@@ -49,7 +49,7 @@
   },
   {
     "deleted": false,
-    "type": "Horno microondas",
+    "category": "Horno microondas",
     "brand": "BGH",
     "model": "B120D",
     "price": 189999,
@@ -65,7 +65,7 @@
   },
   {
     "deleted": false,
-    "type": "Televisor",
+    "category": "Televisor",
     "brand": "LG",
     "model": "55UQ8050PSB",
     "price": 749999,
@@ -81,7 +81,7 @@
   },
   {
     "deleted": false,
-    "type": "Aire acondicionado",
+    "category": "Aire acondicionado",
     "brand": "Surrey",
     "model": "553BFQ1201F",
     "price": 679999,

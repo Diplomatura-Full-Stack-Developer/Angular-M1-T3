@@ -2,11 +2,11 @@ import { Validators } from '@angular/forms';
 import type { AbstractControl } from '@angular/forms';
 
 export const PRODUCT_FORM_SCHEMA = {
-  type: {
+  category: {
     validators: [Validators.required, Validators.minLength(3)],
     messages: {
-      required: 'El tipo de producto es obligatorio.',
-      minlength: 'El tipo de producto debe tener al menos 3 caracteres.',
+      required: 'La categoría es obligatoria.',
+      minlength: 'La categoría debe tener al menos 3 caracteres.',
     },
   },
   brand: {

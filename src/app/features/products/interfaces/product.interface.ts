@@ -9,4 +9,5 @@ export interface IProduct {
   stock: number;
   imageUrl: string;
   features: string[];
+  createdAt: Date;
 }

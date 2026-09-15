@@ -6,7 +6,7 @@ import { PRODUCT_FORM_SCHEMA, ProductField, fieldErrorMessage } from '../../vali
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgClass } from '@angular/common';
-
+import { ConfirmDialog } from '../../../../shared/ui/confirm-dialog/confirm-dialog';
 
 @Component({
   selector: 'app-add-product-form',
@@ -20,7 +20,7 @@ export class AddProductForm {
   private dialog = inject(MatDialog);
 
   productForm = this.formBuilder.group({
-    type: ['', PRODUCT_FORM_SCHEMA.type.validators],
+    category: ['', PRODUCT_FORM_SCHEMA.category.validators],
     brand: ['', PRODUCT_FORM_SCHEMA.brand.validators],
     model: ['', PRODUCT_FORM_SCHEMA.model.validators],
     price: ['', PRODUCT_FORM_SCHEMA.price.validators],
@@ -29,6 +29,7 @@ export class AddProductForm {
     imageUrl: 'no-image.png',
     features: ['', PRODUCT_FORM_SCHEMA.features.validators],
     deleted: false,
+    createdAt: new Date(),
   });
 
   isInvalid(field: ProductField): boolean {
@@ -47,9 +48,17 @@ export class AddProductForm {
       return;
     }
 
+    const { createdAt } = this.productForm.value;
+
+    this.dialog.open(ConfirmDialog, {
+      data: {
+        title: 'Producto agregado correctamente',
+        message: createdAt,
+      },
+      restoreFocus: false,
+    }).afterClosed().subscribe(() => {
+      this.productForm.reset();
+    });
     console.log(this.productForm.value); // TODO: Add product to the database
-
   }
-
-
 }
