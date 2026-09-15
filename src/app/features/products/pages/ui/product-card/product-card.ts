@@ -5,10 +5,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { IProduct } from '../../../interfaces/product.interface';
 import { CurrencyPipe } from '@angular/common';
 import { Products } from '../../../services/product.service';
-
+import { DiscountPipe } from '../../../../../shared/pipes/discount.pipe';
 @Component({
   selector: 'app-product-card',
-  imports: [MatCardModule, MatButtonModule, MatIconModule, CurrencyPipe],
+  imports: [MatCardModule, MatButtonModule, MatIconModule, CurrencyPipe, DiscountPipe],
   templateUrl: './product-card.html',
 })
 export class ProductCard {

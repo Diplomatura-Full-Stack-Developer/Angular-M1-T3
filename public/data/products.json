@@ -6,6 +6,7 @@
     "model": "WFX57S",
     "price": 459999,
     "offer": true,
+    "discount": 10,
     "stock": 8,
     "imageUrl": "/images/products/cocina.webp",
     "features": [
@@ -22,6 +23,7 @@
     "model": "RT38K5932S8",
     "price": 899999,
     "offer": false,
+    "discount": 0,
     "stock": 5,
     "imageUrl": "/images/products/heladera.webp",
     "features": [
@@ -38,6 +40,7 @@
     "model": "Next 8.12 Eco",
     "price": 549999,
     "offer": true,
+    "discount": 10,
     "stock": 12,
     "imageUrl": "/images/products/lavarropas.webp",
     "features": [
@@ -54,6 +57,7 @@
     "model": "B120D",
     "price": 189999,
     "offer": false,
+    "discount": 0,
     "stock": 20,
     "imageUrl": "/images/products/horno_mh.webp",
     "features": [
@@ -70,6 +74,7 @@
     "model": "55UQ8050PSB",
     "price": 749999,
     "offer": true,
+    "discount": 10,
     "stock": 7,
     "imageUrl": "/images/products/televisor.webp",
     "features": [
@@ -86,6 +91,7 @@
     "model": "553BFQ1201F",
     "price": 679999,
     "offer": false,
+    "discount": 0,
     "stock": 4,
     "imageUrl": "/images/products/aire_acondicionado.webp",
     "features": [

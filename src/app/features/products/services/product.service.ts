@@ -11,6 +11,10 @@ export class Products {
   products = signal<IProduct[]>([]);
 
   loadProducts(): void {
+
+    if (this.products().length > 0) {
+      return;
+    }
     this.http.get<IProduct[]>(this.apiUrl).subscribe((prod) => {
       this.products.set(prod.map((product) => ({ ...product, id: crypto.randomUUID() })));
     });
@@ -25,6 +29,6 @@ export class Products {
   }
 
   addProduct(product: IProduct): void {
-    this.products.update((list) => [...list, { ...product, id: crypto.randomUUID() }]);
+    this.products.set([...this.products()!, product]);
   }
 }

@@ -1,11 +1,12 @@
 export interface IProduct {
   id: string;
   deleted: boolean;
-  type: string;
+  category: string;
   brand: string;
   model: string;
   price: number;
   offer: boolean;
+  discount: number;
   stock: number;
   imageUrl: string;
   features: string[];

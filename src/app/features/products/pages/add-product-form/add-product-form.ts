@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { inject } from '@angular/core';
@@ -7,7 +7,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgClass } from '@angular/common';
 import { ConfirmDialog } from '../../../../shared/ui/confirm-dialog/confirm-dialog';
-
+import { Products } from '../../services/product.service';
+import { IProduct } from '../../interfaces/product.interface';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-product-form',
   imports: [ReactiveFormsModule, MatDialogModule, NgClass],
@@ -18,6 +20,9 @@ export class AddProductForm {
 
   private formBuilder = inject(FormBuilder);
   private dialog = inject(MatDialog);
+  private productsService = inject(Products);
+  private router = inject(Router);
+
 
   productForm = this.formBuilder.group({
     category: ['', PRODUCT_FORM_SCHEMA.category.validators],
@@ -25,6 +30,7 @@ export class AddProductForm {
     model: ['', PRODUCT_FORM_SCHEMA.model.validators],
     price: ['', PRODUCT_FORM_SCHEMA.price.validators],
     offer: false,
+    discount: ['', PRODUCT_FORM_SCHEMA.discount.validators],
     stock: ['', PRODUCT_FORM_SCHEMA.stock.validators],
     imageUrl: 'no-image.png',
     features: ['', PRODUCT_FORM_SCHEMA.features.validators],
@@ -59,6 +65,16 @@ export class AddProductForm {
     }).afterClosed().subscribe(() => {
       this.productForm.reset();
     });
-    console.log(this.productForm.value); // TODO: Add product to the database
+
+    this.productsService.addProduct({
+      ...this.productForm.value,
+      id: crypto.randomUUID(),
+      deleted: false,
+      createdAt: new Date(),
+      features: this.productForm.value.features?.toString().split(',') || [],
+      imageUrl: '/images/products/no-image.jpg',
+    } as unknown as IProduct);
+
+    this.router.navigate(['/']);
   }
 }

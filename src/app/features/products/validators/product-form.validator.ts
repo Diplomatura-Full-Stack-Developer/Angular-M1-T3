@@ -43,6 +43,14 @@ export const PRODUCT_FORM_SCHEMA = {
       required: 'Las características son obligatorias.',
     },
   },
+  discount: {
+    validators: [Validators.required, Validators.min(0), Validators.max(100)],
+    messages: {
+      required: 'El descuento es obligatorio.',
+      min: 'El descuento debe ser mayor a 0.',
+      max: 'El descuento debe ser menor a 100.',
+    },
+  },
 } as const;
 
 export type ProductField = keyof typeof PRODUCT_FORM_SCHEMA;
